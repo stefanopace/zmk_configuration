@@ -16,21 +16,6 @@
 #define FN       5
 
 / {
-    macros {
-        terminal: terminal {
-            label = "terminal";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp EQUAL>
-                , <&macro_release &kp LCTRL>
-                , <&macro_release &kp LALT>
-                ;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -38,7 +23,7 @@
             bindings = <
     &lt FN ESC &kp Q     &kp W    &kp E     &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P         &kp BSPC
     &kp TAB    &kp A     &kp S    &kp D     &lt SYM F   &kp G      &kp H     &lt SYM J    &kp K     &kp L     &kp SQT       &kp ENTER
-    &kp LSHFT  &kp Z     &kp X    &kp C     &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &terminal
+    &kp LSHFT  &kp Z     &kp X    &kp C     &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
     &kp LCTRL  &kp LGUI  &kp LALT &kp BSLH  &mo NAV     &kp SPACE  &trans    &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
             >;
         };
@@ -54,9 +39,9 @@
 
         num {
             bindings = <
-    &trans &none        &none       &none       &none         &none        &kp C_AC_REDO       &none    &none     &none   &none   &trans
+    &trans &none        &none       &none       &none         &none        &kp LC(V)       &none    &none     &none   &none   &trans
     &trans &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
-    &trans &kp C_AC_UNDO   &kp C_AC_CUT   &kp C_AC_COPY  &kp C_AC_PASTE   &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
+    &trans &kp LC(Z)   &kp LC(X)   &kp LC(C)  &kp LC(V)   &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
     &trans &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans  &trans  &trans
             >;
         };
