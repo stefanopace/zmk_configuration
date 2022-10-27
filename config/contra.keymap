@@ -25,8 +25,8 @@
                 = <&macro_press &kp LCTRL>
                 , <&macro_press &kp LALT>
                 , <&macro_tap &kp EQUAL>
-                , <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
+                , <&macro_release &kp LCTRL>
+                , <&macro_release &kp LALT>
                 ;
         };
     };
