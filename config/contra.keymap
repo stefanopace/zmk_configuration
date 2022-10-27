@@ -65,7 +65,7 @@
             bindings = <
     &trans     &kp LSHFT    &kp LSHFT    &kp LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &mo NV2    &kp LCTRL    &kp LGUI     &kp LALT     &kp TAB      &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &kp F    &trans
-    &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
+    &kc CAPS   &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &trans     &trans       &trans       &trans       &trans       &trans       &trans     &none     &trans     &trans     &trans   &trans
             >;
         };
