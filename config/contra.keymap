@@ -15,6 +15,8 @@
 #define NV2      4
 #define FN       5
 
+#define COMPOSE_KEY K_APP
+
 / {
     behaviors {
         bhm: balanced_homerow_mods {
@@ -25,6 +27,25 @@
             quick-tap-ms = <150>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
+        };
+
+        doeu: dollar_euro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOLLAR>, <&euro>;
+        };
+    };
+
+    macros {
+        euro: euro {
+            label = "TYPE_EURO_SYMBOL";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp E &kp E>
+                ;
         };
     };
 
@@ -44,7 +65,7 @@
             bindings = <
     &trans     &kp GRAVE       &kp AT        &kp HASH       &kp LEFT_BRACE       &kp PERCENT &kp CARET     &kp RIGHT_BRACE       &kp STAR      &kp SEMICOLON    &none             &kp DEL
     &trans     &kp TILDE       &kp AMPERSAND &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS    &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON        &kp DOUBLE_QUOTES &trans
-    &trans     &kp EXCLAMATION &kp DOLLAR    &kp UNDERSCORE &kp LEFT_BRACKET     &none       &kp BACKSLASH &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans     &kp EXCLAMATION &doeu         &kp UNDERSCORE &kp LEFT_BRACKET     &none       &kp BACKSLASH &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
     &trans     &trans          &trans        &trans         &none                &trans      &trans        &none                 &trans        &trans           &trans            &trans
             >;
         };
