@@ -42,9 +42,10 @@
         euro: euro {
             label = "TYPE_EURO_SYMBOL";
             compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp COMPOSE_KEY &kp E &kp E>
+                = <&macro_tap &kp COMPOSE_KEY &kp E &kp EQUAL>
                 ;
         };
     };
