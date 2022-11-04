@@ -48,6 +48,16 @@
                 = <&macro_tap &kp COMPOSE_KEY &kp E &kp EQUAL>
                 ;
         };
+
+        accent: acc {
+            label = "TYPE_ACCENTED_LETTER";
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            #binding-cells = <2>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp &kp>
+                ;
+        };
     };
 
     keymap {
@@ -74,7 +84,7 @@
         num {
             bindings = <
     &trans &none        &none       &none       &none         &none        &kp LC(V)   &none    &none     &none   &none   &trans
-    &trans &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
+    &acc A GRAVE &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
     &trans &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)     &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
     &trans &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans  &trans  &trans
             >;
