@@ -49,7 +49,7 @@
                 ;
         };
 
-        accent: acc {
+        acc: accent {
             label = "TYPE_ACCENTED_LETTER";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
