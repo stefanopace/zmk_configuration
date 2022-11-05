@@ -33,8 +33,64 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&kp DOLLAR>, <&euro>;
+        };
+
+        acc_a: accented_a {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_A";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_a>, <&up_acc_a>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acc_e: accented_e {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ACCENTED_E";
+            #binding-cells = <0>;
+            tapping-term-ms = <175>;
+            bindings = <&acc_e_grv>, <&acc_e_acu>;
+        };
+
+        acc_e_grv: accented_e_grv {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_E_GRV";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_e>, <&up_acc_e>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acc_e_acu: accented_e_acu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_E_ACU";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_e_acu>, <&up_acc_e_acu>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acc_i: accented_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_I";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_i>, <&up_acc_i>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acc_o: accented_o {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_O";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_o>, <&up_acc_o>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acc_u: accented_u {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ACCENTED_U";
+            #binding-cells = <0>;
+            bindings = <&lo_acc_u>, <&up_acc_u>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -42,6 +98,7 @@
         euro: euro {
             label = "TYPE_EURO_SYMBOL";
             compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
             wait-ms = <0>;
             #binding-cells = <0>;
             bindings
@@ -49,15 +106,138 @@
                 ;
         };
 
-        acc: accent {
-            label = "TYPE_ACCENTED_LETTER";
+        lo_acc_a: lower_accented_a {
+            label = "LOWER_ACCENTED_A";
             compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
             wait-ms = <0>;
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp COMPOSE_KEY &kp A &kp GRAVE>
                 ;
         };
+
+        up_acc_a: upper_accented_a {
+            label = "UPPER_ACCENTED_A";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(A) &kp GRAVE>
+                ;
+        };
+
+        lo_acc_e: lower_accented_e {
+            label = "LOWER_ACCENTED_E";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp E &kp GRAVE>
+                ;
+        };
+
+        up_acc_e: upper_accented_e {
+            label = "UPPER_ACCENTED_E";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(E) &kp GRAVE>
+                ;
+        };
+
+        lo_acc_e_acu: lower_accented_e_acu {
+            label = "LOWER_ACCENTED_E_ACU";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp E &kp SQT>
+                ;
+        };
+
+        up_acc_e_acu: upper_accented_e_acu {
+            label = "UPPER_ACCENTED_E_ACU";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(E) &kp SQT>
+                ;
+        };
+
+        lo_acc_i: lower_accented_i {
+            label = "LOWER_ACCENTED_I";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp I &kp GRAVE>
+                ;
+        };
+
+        up_acc_i: upper_accented_i {
+            label = "UPPER_ACCENTED_I";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(I) &kp GRAVE>
+                ;
+        };
+
+        lo_acc_o: lower_accented_o {
+            label = "LOWER_ACCENTED_O";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp O &kp GRAVE>
+                ;
+        };
+
+        up_acc_o: upper_accented_o {
+            label = "UPPER_ACCENTED_O";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(O) &kp GRAVE>
+                ;
+        };
+
+        lo_acc_u: lower_accented_u {
+            label = "LOWER_ACCENTED_U";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp U &kp GRAVE>
+                ;
+        };
+
+        up_acc_u: upper_accented_u {
+            label = "UPPER_ACCENTED_U";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp COMPOSE_KEY &kp LS(U) &kp GRAVE>
+                ;
+        };
+        
     };
 
     keymap {
@@ -83,10 +263,10 @@
 
         num {
             bindings = <
-    &trans &none        &none       &none       &none         &none        &kp LC(V)   &none    &none     &none   &none   &trans
-    &acc   &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
-    &trans &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)     &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
-    &trans &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans  &trans  &trans
+    &trans    &none        &none       &acc_e      &none         &none        &kp LC(V)   &acc_u   &acc_i    &acc_o  &none   &trans
+    &acc_a    &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
+    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)     &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
+    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans  &trans  &trans
             >;
         };
 

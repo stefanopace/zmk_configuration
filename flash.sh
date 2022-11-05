@@ -5,6 +5,8 @@ echo $container_name
 
 docker exec -it --workdir /workspaces/zmk/app $container_name west build -b nice_nano -- -DSHIELD=contra -DZMK_CONFIG="/workspaces/zmk-config/config"
 
+if [[ $? -ne 0 ]]; then echo "fail"; exit 1 ;fi
+
 echo "waiting for bootloader"
 while [[ ! -d "/media/stefano/NICENANO" ]]
 do
