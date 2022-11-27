@@ -3,7 +3,7 @@
 container_name=$(docker ps | grep -o "^[a-z0-9]*")
 echo $container_name
 
-docker exec -it --workdir /workspaces/zmk/app $container_name west build -b nice_nano -- -DSHIELD=contra -DZMK_CONFIG="/workspaces/zmk-config/config"
+docker exec -it --workdir /workspaces/zmk/app $container_name west build --pristine -b nice_nano_v2 -- -DSHIELD=contra -DZMK_CONFIG="/workspaces/zmk-config/config"
 
 if [[ $? -ne 0 ]]; then echo "fail"; exit 1 ;fi
 

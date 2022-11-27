@@ -291,7 +291,7 @@
 
         fn {
             bindings = <
-    &trans     &rgb_ug RGB_TOG &none           &none           &none           &none           &none    &kp F1   &kp F2    &kp F3    &kp F10  &none
+    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none    &kp F1   &kp F2    &kp F3    &kp F10  &none
     &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none    &kp F4   &kp F5    &kp F6    &kp F11  &none
     &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none    &kp F7   &kp F8    &kp F9    &kp F12  &none
     &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none     &none     &none    &none
