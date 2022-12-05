@@ -16,6 +16,14 @@
 #define NV2      4
 #define FN       5
 
+#define MIN_QWE  6
+#define MIN_SYM  7
+#define MIN_NUM  8
+#define MIN_NAV  9
+#define MIN_NV2  10
+#define MIN_FN   11
+
+
 #define COMPOSE_KEY K_APP
 
 / {
@@ -249,7 +257,7 @@
     &lt FN ESC &kp Q     &kp W    &kp E                &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P         &kp BSPC
     &kp TAB    &kp A     &kp S    &kp D                &bhm SYM F  &kp G      &kp H     &bhm SYM J   &kp K     &kp L     &kp SQT       &kp ENTER
     &kp LSHFT  &kp Z     &kp X    &kp C                &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &kp LC(LA(PLUS))     &mo NAV     &kp SPACE  &trans    &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
+    &kp LCTRL  &kp LGUI  &kp LALT &to MIN_QWE          &mo NAV     &kp SPACE  &trans    &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
             >;
         };
 
@@ -273,7 +281,7 @@
 
         nav {
             bindings = <
-    &trans     &kp LSHFT    &kp LSHFT    &kp LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
+    &trans     &kp LSHFT    &kp LSHFT    &kp LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &kp BSPC
     &mo NV2    &kp LCTRL    &kp LGUI     &kp LALT     &kp TAB      &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &kp F    &trans
     &kp CAPS   &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &trans     &trans       &trans       &trans       &trans       &trans       &trans    &none     &trans     &trans     &trans   &trans
@@ -297,5 +305,60 @@
     &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none     &none     &none    &none
             >;
         };
+
+        min_qwerty {
+            bindings = <
+    &kp Q      &kp W    &kp E      &kp R           &kp T      &mo MIN_FN &none &kp Y       &kp U          &kp I     &kp O     &kp P         
+    &kp A      &kp S    &kp D      &bhm MIN_SYM F  &kp G      &none      &none &kp H       &bhm MIN_SYM J &kp K     &kp L     &kp SQT       
+    &mt RSFT Z &kp X    &kp C      &kp V           &kp B      &none      &rgb_ug RGB_TOG &kp N       &kp M          &kp COMMA &kp DOT   &mt RSFT FSLH 
+    &to QWE    &none    &none      &mo MIN_NAV     &kp SPACE  &none      &none &kp TAB &mo MIN_NUM    &none     &none     &none
+            >;
+        };
+
+        min_sym {
+            bindings = <
+    &kp GRAVE       &kp AT        &kp HASH       &kp LEFT_BRACE       &kp PERCENT &trans     &trans     &kp CARET     &kp RIGHT_BRACE       &kp STAR      &kp SEMICOLON    &kp DEL            
+    &kp TILDE       &kp AMPERSAND &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS    &trans     &trans     &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON        &kp DOUBLE_QUOTES
+    &kp EXCLAMATION &doeu         &kp UNDERSCORE &kp LEFT_BRACKET     &none       &trans     &trans     &kp BACKSLASH &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION     
+    &trans          &trans        &trans         &none                &trans      &trans     &trans     &trans        &none                 &trans        &trans           &trans           
+            >;
+        };
+
+        min_num {
+            bindings = <
+        &acc_a       &none       &acc_e      &none         &none     &none &none   &kp LC(Y)   &acc_u   &acc_i    &acc_o  &trans
+        &kp N1       &kp N2      &kp N3      &kp N4        &kp N5    &none &none   &kp N6      &kp N7   &kp N8    &kp N9  &kp N0 
+        &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)     &none     &none &none   &none       &none    &kp COMMA &kp DOT &trans 
+        &trans       &trans      &trans      &trans        &trans    &none &none   &trans      &trans   &trans    &trans  &trans 
+            >;
+        };
+
+        min_nav {
+            bindings = <
+    &kp ESC      &kp LSHFT    &kp LSHFT    &trans       &trans &trans &trans       &trans    &trans    &trans     &trans     &kp BSPC
+    &kp LCTRL    &kp LGUI     &kp LALT     &kp TAB      &trans &trans &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &kp F    
+    &kp CAPS     &trans       &trans       &mo MIN_NV2  &trans &trans &trans       &trans    &kp ENTER  &trans     &trans     &trans   
+    &trans       &trans       &trans       &trans       &trans &trans &trans       &trans    &none     &trans     &trans     &trans   
+            >;
+        };
+
+        min_nav2 {
+            bindings = <
+    &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans    &trans    &trans     &trans    &trans
+    &trans       &trans       &trans       &trans       &trans       &trans     &trans     &kp HOME  &kp PG_DN &kp PG_UP  &kp END   &trans
+    &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans    &trans    &trans     &trans    &trans
+    &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans    &trans    &trans     &trans    &bootloader
+            >;
+        };
+
+        min_fn {
+            bindings = <
+    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none    &kp F1   &kp F2    &kp F3    &kp F10  &none
+    &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none    &kp F4   &kp F5    &kp F6    &kp F11  &none
+    &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none    &kp F7   &kp F8    &kp F9    &kp F12  &none
+    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none     &none     &none    &none
+            >;
+        };
+
     };
 };
