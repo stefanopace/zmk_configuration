@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define QWE      0
-#define COL      1
+#define COL      0
+#define QWE      1
 #define SYM      2
 #define NUM      3
 #define NAV      4
@@ -245,23 +245,25 @@
     keymap {
         compatible = "zmk,keymap";
 
-        qwerty {
-            bindings = <
-    &lt FN ESC &kp Q     &kp W    &kp E                &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P         &kp BSPC
-    &kp TAB    &kp A     &kp S    &kp D                &bhm SYM F  &kp G      &kp H     &bhm SYM J   &kp K     &kp L     &kp SQT       &kp ENTER
-    &kp LSHFT  &kp Z     &kp X    &kp C                &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &to COL              &mo NAV     &kp SPACE  &trans    &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
-            >;
-        };
-
         colemak {
             bindings = <
     &lt FN ESC &kp Q     &kp W    &kp F                &kp P       &kp B      &kp J     &kp L        &kp U     &kp Y     &kp SQT       &kp BSPC
     &kp TAB    &kp A     &kp R    &kp S                &kp T       &kp G      &kp M     &kp N        &kp E     &kp I     &kp O         &kp ENTER
     &kp LSHFT  &kp Z     &kp X    &kp C                &kp D       &kp V      &kp K     &kp H        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &to QWE              &mo NAV     &kp SPACE  &trans    &mo NUM      &mo SYM   &kp DOWN &kp UP         &kp RIGHT
+    &kp LCTRL  &kp LGUI  &kp LALT &to QWE              &mo NAV     &kp SPACE  &mo SYM   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
             >;
         };
+
+        
+        qwerty {
+            bindings = <
+    &lt FN ESC &kp Q     &kp W    &kp E                &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P         &kp BSPC
+    &kp TAB    &kp A     &kp S    &kp D                &kp F       &kp G      &kp H     &kp J        &kp K     &kp L     &kp SQT       &kp ENTER
+    &kp LSHFT  &kp Z     &kp X    &kp C                &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL  &kp LGUI  &kp LALT &to COL              &mo NAV     &kp SPACE  &mo SYM   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
+            >;
+        };
+
 
         sym {
             bindings = <
