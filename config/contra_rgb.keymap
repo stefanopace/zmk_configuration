@@ -285,8 +285,8 @@
 
         nav {
             bindings = <
-    &trans     &kp LSHFT    &kp LSHFT    &kp LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
-    &mo NV2    &kp LCTRL    &kp LGUI     &kp LALT     &kp TAB      &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &kp F    &trans
+    &trans     &sk LSHFT    &sk LSHFT    &sk LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
+    &mo NV2    &sk LCTRL    &sk LGUI     &sk LALT     &kp TAB      &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans   &trans
     &kp CAPS   &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
     &trans     &trans       &trans       &trans       &trans       &trans       &trans    &none     &trans     &trans     &trans   &trans
             >;
