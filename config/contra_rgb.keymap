@@ -12,10 +12,11 @@
 #define COL      0
 #define QWE      1
 #define SYM      2
-#define NUM      3
-#define NAV      4
-#define NV2      5
-#define FN       6
+#define SY2      3
+#define NUM      4
+#define NAV      5
+#define NV2      6
+#define FN       7
 
 #define COMPOSE_KEY K_APP
 
@@ -247,10 +248,10 @@
 
         colemak {
             bindings = <
-    &lt FN ESC &kp Q     &kp W    &kp F                &kp P       &kp B      &kp J     &kp L        &kp U     &kp Y     &kp SQT       &kp BSPC
+    &lt FN ESC &kp Q     &kp W    &kp F                &kp P       &kp B      &kp J     &kp L        &kp U     &kp Y     &kp SQT       &kp GRAVE
     &kp TAB    &kp A     &kp R    &kp S                &kp T       &kp G      &kp M     &kp N        &kp E     &kp I     &kp O         &kp ENTER
     &kp LSHFT  &kp Z     &kp X    &kp C                &kp D       &kp V      &kp K     &kp H        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &to QWE              &mo NAV     &kp SPACE  &mo SYM   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
+    &kp LCTRL  &kp LGUI  &kp LALT &to QWE              &mo NAV     &kp SPACE  &mo SY2   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
             >;
         };
 
@@ -272,13 +273,20 @@
     &trans     &kp EXCLAMATION &kp BACKSLASH &kp UNDERSCORE &kp LEFT_BRACKET     &none       &none         &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
     &trans     &trans          &trans        &trans         &none                &trans      &trans        &none                 &trans        &trans           &trans            &trans
             >;
-        };
+
+        sym2 {
+            bindings = <
+    &kp N0     &kp N1          &kp N2        &kp N3         &kp N4               &kp N5           &kp N6            &kp N7                &kp N8        &kp N9           &kp DOUBLE_QUOTES &kp GRAVE
+    &kp AT     &kp HASH        &kp PERCENT   &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL         &kp RIGHT_PARENTHESIS &kp PIPE      &kp AMPERSAND    &kp COLON         &kp SEMICOLON
+    &kp TILDE  &kp EXCLAMATION &kp STAR      &kp UNDERSCORE &kp LEFT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &doeu
+    &trans     &trans          &trans        &trans         &kp CARET            &trans           &trans            &kp BACKSLASH         &trans        &trans           &trans            &trans
+            >;
 
         num {
             bindings = <
-    &trans    &none        &none       &acc_e      &none         &none        &none       &acc_u   &acc_i    &kp LC(Y)  &none   &trans
-    &acc_a    &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9     &kp N0  &trans
-    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &none         &kp LC(V)    &none       &none    &kp COMMA &kp DOT    &trans  &trans
+    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &acc_u    &kp LC(Y)  &trans  &trans
+    &trans    &acc_a       &trans      &trans      &trans        &trans       &trans      &trans   &acc_e    &acc_i     &acc_o  &trans
+    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &trans        &kp LC(V)    &trans      &trans   &trans    &trans     &trans  &trans
     &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans     &trans  &trans
             >;
         };
