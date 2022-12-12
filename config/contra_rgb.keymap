@@ -267,19 +267,19 @@
 
         sym {
             bindings = <
-    &trans     &kp GRAVE       &kp AT        &kp HASH       &kp LEFT_BRACE       &kp PERCENT &kp CARET     &kp RIGHT_BRACE       &kp STAR      &kp SEMICOLON    &none             &kp BSPC
-    &trans     &kp TILDE       &kp AMPERSAND &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS    &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON        &kp DOUBLE_QUOTES &trans
-    &trans     &kp EXCLAMATION &doeu         &kp UNDERSCORE &kp LEFT_BRACKET     &none       &kp BACKSLASH &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans     &kp GRAVE       &kp AT        &kp HASH       &kp LEFT_BRACE       &kp PERCENT &kp CARET     &kp RIGHT_BRACE       &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &kp BSPC
+    &trans     &kp TILDE       &doeu         &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS    &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
+    &trans     &kp EXCLAMATION &kp BACKSLASH &kp UNDERSCORE &kp LEFT_BRACKET     &none       &none         &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
     &trans     &trans          &trans        &trans         &none                &trans      &trans        &none                 &trans        &trans           &trans            &trans
             >;
         };
 
         num {
             bindings = <
-    &trans    &none        &none       &acc_e      &none         &none        &kp LC(Y)   &acc_u   &acc_i    &acc_o  &none   &trans
-    &acc_a    &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9  &kp N0  &trans
-    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)     &none        &none       &none    &kp COMMA &kp DOT &trans  &trans
-    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans  &trans  &trans
+    &trans    &none        &none       &acc_e      &none         &none        &none       &acc_u   &acc_i    &kp LC(Y)  &none   &trans
+    &acc_a    &kp N1       &kp N2      &kp N3      &kp N4        &kp N5       &kp N6      &kp N7   &kp N8    &kp N9     &kp N0  &trans
+    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &none         &kp LC(V)    &none       &none    &kp COMMA &kp DOT    &trans  &trans
+    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans     &trans  &trans
             >;
         };
 
