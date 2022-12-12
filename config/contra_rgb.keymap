@@ -273,6 +273,7 @@
     &trans     &kp EXCLAMATION &kp BACKSLASH &kp UNDERSCORE &kp LEFT_BRACKET     &none       &none         &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
     &trans     &trans          &trans        &trans         &none                &trans      &trans        &none                 &trans        &trans           &trans            &trans
             >;
+        };
 
         sym2 {
             bindings = <
@@ -281,6 +282,7 @@
     &kp TILDE  &kp EXCLAMATION &kp STAR      &kp UNDERSCORE &kp LEFT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &doeu
     &trans     &trans          &trans        &trans         &kp CARET            &trans           &trans            &kp BACKSLASH         &trans        &trans           &trans            &trans
             >;
+        };
 
         num {
             bindings = <
