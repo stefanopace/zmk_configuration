@@ -247,10 +247,10 @@
 
         colemak {
             bindings = <
-    &lt FN ESC    &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L &kp U     &kp Y     &kp SQT       &kp BSPC
-    &kp TAB       &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N &kp E     &kp I     &kp O         &kp ENTER
-    &kp CAPS_WORD &mt LSFT Z &kp X    &kp C &kp D   &kp V     &kp K   &kp H &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL     &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &none &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L &kp U     &kp Y     &kp SQT       &kp BSPC
+    &kp TAB    &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N &kp E     &kp I     &kp O         &kp ENTER
+    &caps_word &mt LSFT Z &kp X    &kp C &kp D   &kp V     &kp K   &kp H &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL  &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &none &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
         
