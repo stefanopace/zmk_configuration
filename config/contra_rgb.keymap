@@ -12,11 +12,10 @@
 #define COL      0
 #define QWE      1
 #define SYM      2
-#define SY2      3
-#define NUM      4
-#define NAV      5
-#define NV2      6
-#define FN       7
+#define ACC      3
+#define NAV      4
+#define NV2      5
+#define FN       6
 
 #define COMPOSE_KEY K_APP
 
@@ -248,75 +247,64 @@
 
         colemak {
             bindings = <
-    &lt FN ESC &kp Q     &kp W    &kp F                &kp P       &kp B      &kp J     &kp L        &kp U     &kp Y     &kp SQT       &kp BSPC
-    &kp TAB    &kp A     &kp R    &kp S                &kp T       &kp G      &kp M     &kp N        &kp E     &kp I     &kp O         &kp ENTER
-    &kp LSHFT  &kp Z     &kp X    &kp C                &kp D       &kp V      &kp K     &kp H        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &to QWE              &mo NAV     &kp SPACE  &mo SY2   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
+    &lt FN ESC &kp Q    &kp W    &kp F &kp P   &kp B     &kp J   &kp L             &kp U     &kp Y     &kp SQT  &kp BSPC
+    &kp TAB    &kp A    &kp R    &kp S &kp T   &kp G     &kp M   &kp N             &kp E     &kp I     &kp O    &kp ENTER
+    &kp LSHFT  &kp Z    &kp X    &kp C &kp D   &kp V     &kp K   &kp H             &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
+    &kp LCTRL  &kp LGUI &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp LEFT  &kp DOWN &kp UP    &kp RIGHT
             >;
         };
-
         
         qwerty {
             bindings = <
-    &lt FN ESC &kp Q     &kp W    &kp E                &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P         &kp BSPC
-    &kp TAB    &kp A     &kp S    &kp D                &kp F       &kp G      &kp H     &kp J        &kp K     &kp L     &kp SQT       &kp ENTER
-    &kp LSHFT  &kp Z     &kp X    &kp C                &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI  &kp LALT &to COL              &mo NAV     &kp SPACE  &mo SYM   &mo NUM      &kp LEFT  &kp DOWN &kp UP         &kp RIGHT
+    &lt FN ESC &kp Q    &kp W    &kp E &kp R   &kp T     &kp Y   &kp U             &kp I     &kp O    &kp P    &kp BSPC
+    &kp TAB    &kp A    &kp S    &kp D &kp F   &kp G     &kp H   &kp J             &kp K     &kp L    &kp SQT  &kp ENTER
+    &kp LSHFT  &kp Z    &kp X    &kp C &kp V   &kp B     &kp N   &kp M             &kp COMMA &kp DOT  &kp UP   &kp RSHFT
+    &kp LCTRL  &kp LGUI &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp FSLH  &kp LEFT &kp DOWN &kp RIGHT
             >;
         };
 
-
-        sym {
+        symbols {
             bindings = <
-    &trans     &kp GRAVE       &kp AT        &kp HASH       &kp LEFT_BRACE       &kp PERCENT &kp CARET     &kp RIGHT_BRACE       &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &kp BSPC
-    &trans     &kp TILDE       &doeu         &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS    &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
-    &trans     &kp EXCLAMATION &kp BACKSLASH &kp UNDERSCORE &kp LEFT_BRACKET     &none       &none         &kp RIGHT_BRACKET     &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans     &trans          &trans        &trans         &none                &trans      &trans        &none                 &trans        &trans           &trans            &trans
+    &kp N0    &kp N1          &kp N2      &kp N3         &kp N4               &kp N5           &kp N6            &kp N7                &kp N8        &kp N9           &kp DOUBLE_QUOTES &kp GRAVE
+    &kp AT    &kp HASH        &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL         &kp RIGHT_PARENTHESIS &kp PIPE      &kp AMPERSAND    &kp COLON         &kp SEMICOLON
+    &kp TILDE &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &doeu
+    &trans    &trans          &trans      &trans         &kp CARET            &lt ACC SPACE    &trans            &kp BACKSLASH         &trans        &trans           &trans            &trans
             >;
         };
 
-        sym2 {
+        accents {
             bindings = <
-    &kp N0     &kp N1          &kp N2        &kp N3         &kp N4               &kp N5           &kp N6            &kp N7                &kp N8        &kp N9           &kp DOUBLE_QUOTES &kp GRAVE
-    &kp AT     &kp HASH        &kp PERCENT   &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL         &kp RIGHT_PARENTHESIS &kp PIPE      &kp AMPERSAND    &kp COLON         &kp SEMICOLON
-    &kp TILDE  &kp EXCLAMATION &kp STAR      &kp UNDERSCORE &kp LEFT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &doeu
-    &trans     &trans          &trans        &trans         &kp CARET            &trans           &trans            &kp BACKSLASH         &trans        &trans           &trans            &trans
-            >;
-        };
-
-        num {
-            bindings = <
-    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &acc_u    &kp LC(Y)  &trans  &trans
-    &trans    &acc_a       &trans      &trans      &trans        &trans       &trans      &trans   &acc_e    &acc_i     &acc_o  &trans
-    &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &trans        &kp LC(V)    &trans      &trans   &trans    &trans     &trans  &trans
-    &trans    &trans       &trans      &trans      &trans        &trans       &trans      &trans   &trans    &trans     &trans  &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &acc_u &trans &trans &trans
+    &trans &acc_a &trans &trans &trans &trans &trans &trans &acc_e &acc_i &acc_o &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         nav {
             bindings = <
-    &trans     &sk LSHFT    &sk LSHFT    &sk LSHFT    &trans       &trans       &trans    &trans    &trans     &trans     &trans   &kp DEL
-    &mo NV2    &sk LCTRL    &kp LGUI     &sk LALT     &kp TAB      &trans       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans   &trans
-    &kp CAPS   &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
-    &trans     &trans       &trans       &trans       &trans       &trans       &trans    &none     &trans     &trans     &trans   &trans
+    &trans   &sk LSHFT &sk LSHFT &sk LSHFT &trans  &trans &trans   &trans    &trans   &trans    &trans    &kp DEL
+    &mo NV2  &sk LCTRL &kp LGUI  &sk LALT  &kp TAB &trans &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &trans    &trans
+    &kp CAPS &trans    &trans    &trans    &trans  &trans &trans   &kp LCTRL &kp LGUI &kp LALT  &kp LSHFT &trans
+    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
             >;
         };
 
         nav2 {
             bindings = <
-    &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
-    &trans     &trans       &trans       &trans       &trans       &trans       &kp HOME  &kp PG_DN &kp PG_UP  &kp END    &trans   &trans
-    &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &trans
-    &trans     &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans     &trans     &trans   &bootloader
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
+    &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &bootloader
             >;
         };
 
         fn {
             bindings = <
-    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none    &kp F1   &kp F2    &kp F3    &kp F10  &none
-    &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none    &kp F4   &kp F5    &kp F6    &kp F11  &none
-    &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none    &kp F7   &kp F8    &kp F9    &kp F12  &none
-    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none     &none     &none    &none
+    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none &kp F1 &kp F2 &kp F3 &kp F10 &tog QWE
+    &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none &kp F4 &kp F5 &kp F6 &kp F11 &none
+    &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none &none  &none  &none  &none   &none
             >;
         };
     };
