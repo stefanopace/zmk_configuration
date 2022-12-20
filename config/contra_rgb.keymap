@@ -113,9 +113,17 @@
 
         inv_comma: inverted_comma {
             compatible = "zmk,behavior-mod-morph";
-            label = "INVERTED_comma";
+            label = "INVERTED_COMMA";
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp COMMA>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        inv_colon: inverted_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INVERTED_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -290,8 +298,8 @@
         symbols {
             bindings = <
     &kp N0    &kp N1          &kp N2      &kp N3         &kp N4               &kp N5           &kp N6        &kp N7                &kp N8           &kp N9            &kp GRAVE         &trans
-    &kp AT    &kp HASH        &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE         &kp AMPERSAND     &kp COLON         &kp SEMICOLON
-    &kp TILDE &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp CARET        &doeu         &kp RIGHT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
+    &kp AT    &kp HASH        &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE         &kp AMPERSAND     &inv_colon        &trans
+    &trans    &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp CARET        &doeu         &kp RIGHT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
     &trans    &trans          &trans      &trans         &trans               &lt ACC SPACE    &trans        &trans                &trans           &trans            &trans            &trans
             >;
         };
