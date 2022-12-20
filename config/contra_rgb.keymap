@@ -20,6 +20,151 @@
 #define COMPOSE_KEY K_APP
 
 / {
+    keymap {
+        compatible = "zmk,keymap";
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │ " ' │bkspc│
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │ < , │ > . │ / ? │term │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │ nav │space│ sym │ctrl │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        colemak {
+            bindings = <
+    &lt FN ESC &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &inv_quot     &kp BSPC
+    &kp TAB    &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
+    &kp LSFT   &kp Z      &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &inv_comma &inv_dot  &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL  &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │ esc │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │bkspc│
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │ tab │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │ ' " │enter│
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │shift│  Z  │  X  │  C  │  V  │  B  │  N  │  M  │ , < │ . > │ / ? │shift│
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │ nav │space│ sym │term │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        qwerty {
+            bindings = <
+    &lt FN ESC &kp Q    &kp W    &kp E &kp R   &kp T     &kp Y   &kp U             &kp I     &kp O    &kp P    &kp BSPC
+    &kp TAB    &kp A    &kp S    &kp D &kp F   &kp G     &kp H   &kp J             &kp K     &kp L    &kp SQT  &kp ENTER
+    &kp LSHFT  &kp Z    &kp X    &kp C &kp V   &kp B     &kp N   &kp M             &kp COMMA &kp DOT  &kp UP   &kp RSHFT
+    &kp LCTRL  &kp LGUI &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp FSLH  &kp LEFT &kp DOWN &kp RIGHT
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │  0  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │ ` ~ │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │  @  │  #  │  %  │  -  │  (  │  +  │  =  │  )  │  |  │  &  │ : ; │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │  !  │  *  │  _  │  {  │  ^  │  $  │  }  │  [  │  ]  │  \  │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │ acc │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        symbols {
+            bindings = <
+    &kp N0    &kp N1          &kp N2      &kp N3         &kp N4               &kp N5           &kp N6        &kp N7                &kp N8           &kp N9            &kp GRAVE         &trans
+    &kp AT    &kp HASH        &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE         &kp AMPERSAND     &inv_colon        &trans
+    &trans    &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp CARET        &doeu         &kp RIGHT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
+    &trans    &trans          &trans      &trans         &trans               &lt ACC SPACE    &trans        &trans                &trans           &trans            &trans            &trans
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │     │     │     │     │     │     │     │     │  Ù  │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │  À  │     │     │     │     │     │     │     │ È É │  Ì  │  Ò  │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        accents {
+            bindings = <
+    &trans &trans &trans &trans &trans &trans &trans &trans &acc_u &trans &trans &trans
+    &trans &acc_a &trans &trans &trans &trans &trans &trans &acc_e &acc_i &acc_o &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │shift│shift│shift│     │     │     │     │     │     │     │ del │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │nav2 │ctrl │ win │ alt │ tab │     │left │down │ up  │right│     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │caps │     │     │     │     │     │     │ctrl │ win │ alt │shift│     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        nav {
+            bindings = <
+    &trans   &sk LSHFT &sk LSHFT &sk LSHFT &trans  &trans &trans   &trans    &trans   &trans    &trans    &kp DEL
+    &mo NV2  &sk LCTRL &kp LGUI  &sk LALT  &kp TAB &trans &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &trans    &trans
+    &kp CAPS &trans    &trans    &trans    &trans  &trans &trans   &kp RCTRL &kp RGUI &kp RALT  &kp RSHFT &trans
+    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │home │pgdwn│pgup │ end │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        nav2 {
+            bindings = <
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
+    &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &bootloader
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │     │     │     │     │     │     │ F1  │ F2  │ F3  │ F10 │ qwe │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │ F4  │ F5  │ F6  │ F11 │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │ F7  │ F8  │ F9  │ F12 │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */
+        fn {
+            bindings = <
+    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none &kp F1 &kp F2 &kp F3 &kp F10 &tog QWE
+    &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none &kp F4 &kp F5 &kp F6 &kp F11 &none
+    &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none &none  &none  &none  &none   &none
+            >;
+        };
+    };
+
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -272,83 +417,5 @@
                 ;
         };
         
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-/*
- * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │ " ' │bkspc│
- * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
- * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │ < , │ > . │ / ? │term │
- * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │ nav │space│ sym │ctrl │     │     │     │     │
- * └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
- */
-        colemak {
-            bindings = <
-    &lt FN ESC &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &inv_quot     &kp BSPC
-    &kp TAB    &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
-    &kp LSFT   &kp Z      &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &inv_comma &inv_dot  &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
-            >;
-        };
-        
-        qwerty {
-            bindings = <
-    &lt FN ESC &kp Q    &kp W    &kp E &kp R   &kp T     &kp Y   &kp U             &kp I     &kp O    &kp P    &kp BSPC
-    &kp TAB    &kp A    &kp S    &kp D &kp F   &kp G     &kp H   &kp J             &kp K     &kp L    &kp SQT  &kp ENTER
-    &kp LSHFT  &kp Z    &kp X    &kp C &kp V   &kp B     &kp N   &kp M             &kp COMMA &kp DOT  &kp UP   &kp RSHFT
-    &kp LCTRL  &kp LGUI &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp FSLH  &kp LEFT &kp DOWN &kp RIGHT
-            >;
-        };
-
-        symbols {
-            bindings = <
-    &kp N0    &kp N1          &kp N2      &kp N3         &kp N4               &kp N5           &kp N6        &kp N7                &kp N8           &kp N9            &kp GRAVE         &trans
-    &kp AT    &kp HASH        &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE         &kp AMPERSAND     &inv_colon        &trans
-    &trans    &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp CARET        &doeu         &kp RIGHT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
-    &trans    &trans          &trans      &trans         &trans               &lt ACC SPACE    &trans        &trans                &trans           &trans            &trans            &trans
-            >;
-        };
-
-        accents {
-            bindings = <
-    &trans &trans &trans &trans &trans &trans &trans &trans &acc_u &trans &trans &trans
-    &trans &acc_a &trans &trans &trans &trans &trans &trans &acc_e &acc_i &acc_o &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            >;
-        };
-
-        nav {
-            bindings = <
-    &trans   &sk LSHFT &sk LSHFT &sk LSHFT &trans  &trans &trans   &trans    &trans   &trans    &trans    &kp DEL
-    &mo NV2  &sk LCTRL &kp LGUI  &sk LALT  &kp TAB &trans &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &trans    &trans
-    &kp CAPS &trans    &trans    &trans    &trans  &trans &trans   &kp RCTRL &kp RGUI &kp RALT  &kp RSHFT &trans
-    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
-            >;
-        };
-
-        nav2 {
-            bindings = <
-    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
-    &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans &bootloader
-            >;
-        };
-
-        fn {
-            bindings = <
-    &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none &kp F1 &kp F2 &kp F3 &kp F10 &tog QWE
-    &none      &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none &kp F4 &kp F5 &kp F6 &kp F11 &none
-    &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none &kp F7 &kp F8 &kp F9 &kp F12 &none
-    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none &none  &none  &none  &none   &none
-            >;
-        };
     };
 };
