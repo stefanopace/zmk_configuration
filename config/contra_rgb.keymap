@@ -66,9 +66,9 @@
 
 /* 
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │  0  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │ ` ~ │     │
+ * │  `  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │  #  │  @  │ % ex│ - ex│  (  │  )  │  +  │ = ex│ | ex│ : ; │  &  │     │
+ * │  #  │  @  │ % ex│ - ex│  (  │  )  │  +  │ = ex│ | ex│ : ; │ & ~ │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  !  │  *  │  _  │  {  │  }  │  $  │  ^  │  [  │  ]  │  \  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
@@ -77,10 +77,10 @@
  */ 
         symbols {
             bindings = <
-    &kp N0    &kp N1          &kp N2           &kp N3         &kp N4               &kp N5                &kp N6   &kp N7         &kp N8           &kp N9            &kp GRAVE         &trans
-    &kp HASH  &kp AT          &elt ELI PERCENT &elt ELI MINUS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &elt ELI EQUAL &elt ELI PIPE    &inv_colon        &kp AMPERSAND     &trans
-    &trans    &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &doeu    &kp CARET      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
-    &trans    &trans          &trans           &trans         &trans               &lt ACC SPACE         &trans   &trans         &trans           &trans            &trans            &trans
+    &kp GRAVE &kp N1          &kp N2           &kp N3         &kp N4               &kp N5                &kp N6   &kp N7         &kp N8           &kp N9            &kp N0        &trans
+    &kp HASH  &kp AT          &elt ELI PERCENT &elt ELI MINUS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &elt ELI EQUAL &elt ELI PIPE    &inv_colon        &and_tilde    &trans
+    &trans    &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &doeu    &kp CARET      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &trans
+    &trans    &trans          &trans           &trans         &trans               &lt ACC SPACE         &trans   &trans         &trans           &trans            &trans        &trans
             >;
         };
 
@@ -301,6 +301,14 @@
             label = "INVERTED_COLON";
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        and_tilde: and_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AND_TILDE";
+            #binding-cells = <0>;
+            bindings = <&kp AMPERSAND>, <&kp TILDE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
