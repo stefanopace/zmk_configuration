@@ -77,10 +77,10 @@
  */ 
         symbols {
             bindings = <
-    &kp N0    &kp N1          &kp N2          &kp N3         &kp N4               &kp N5                &kp N6   &kp N7        &kp N8           &kp N9            &kp GRAVE         &trans
-    &kp HASH  &kp AT          &lt ELI PERCENT &lt ELI MINUS  &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &lt ELI EQUAL &lt ELI PIPE     &inv_colon        &kp AMPERSAND     &trans
-    &trans    &kp EXCLAMATION &kp STAR        &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &doeu    &kp CARET     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
-    &trans    &trans          &trans          &trans         &trans               &lt ACC SPACE         &trans   &trans        &trans           &trans            &trans            &trans
+    &kp N0    &kp N1          &kp N2           &kp N3         &kp N4               &kp N5                &kp N6   &kp N7         &kp N8           &kp N9            &kp GRAVE         &trans
+    &kp HASH  &kp AT          &elt ELI PERCENT &elt ELI MINUS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &elt ELI EQUAL &elt ELI PIPE    &inv_colon        &kp AMPERSAND     &trans
+    &trans    &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &doeu    &kp CARET      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
+    &trans    &trans          &trans           &trans         &trans               &lt ACC SPACE         &trans   &trans         &trans           &trans            &trans            &trans
             >;
         };
 
@@ -186,7 +186,18 @@
         };
     };
 
-    behaviors {
+    behaviors {        
+        elt: elixir_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ELIXIR_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <0>;
+            quick-tap-ms = <125>;
+            retro-tap;
+            bindings = <&mo>, <&kp>;
+        };
+
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
