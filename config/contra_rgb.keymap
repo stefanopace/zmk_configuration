@@ -12,10 +12,11 @@
 #define COL      0
 #define QWE      1
 #define SYM      2
-#define ACC      3
-#define NAV      4
-#define NV2      5
-#define FN       6
+#define ELI      3
+#define ACC      4
+#define NAV      5
+#define NV2      6
+#define FN       7
 
 #define COMPOSE_KEY K_APP
 
@@ -67,19 +68,39 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │  0  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │ ` ~ │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │  #  │  @  │  %  │  -  │  (  │  +  │  =  │  )  │  |  │ : ; │  &  │     │
+ * │  #  │  @  │ % ex│ - ex│  (  │  )  │  +  │ = ex│ | ex│ : ; │  &  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │  *  │  _  │  {  │  ^  │  $  │  }  │  [  │  ]  │  \  │     │
+ * │     │  !  │  *  │  _  │  {  │  }  │  $  │  ^  │  [  │  ]  │  \  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │ acc │     │     │
  *                         └─────┴─────┴─────┴─────┘
- */
+ */ 
         symbols {
             bindings = <
-    &kp N0    &kp N1          &kp N2      &kp N3         &kp N4               &kp N5           &kp N6        &kp N7                &kp N8           &kp N9            &kp GRAVE         &trans
-    &kp HASH  &kp AT          &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp EQUAL     &kp RIGHT_PARENTHESIS &kp PIPE         &inv_colon        &kp AMPERSAND     &trans
-    &trans    &kp EXCLAMATION &kp STAR    &kp UNDERSCORE &kp LEFT_BRACE       &kp CARET        &doeu         &kp RIGHT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
-    &trans    &trans          &trans      &trans         &trans               &lt ACC SPACE    &trans        &trans                &trans           &trans            &trans            &trans
+    &kp N0    &kp N1          &kp N2          &kp N3         &kp N4               &kp N5                &kp N6   &kp N7        &kp N8           &kp N9            &kp GRAVE         &trans
+    &kp HASH  &kp AT          &lt ELI PERCENT &lt ELI MINUS  &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &lt ELI EQUAL &lt ELI PIPE     &inv_colon        &kp AMPERSAND     &trans
+    &trans    &kp EXCLAMATION &kp STAR        &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &doeu    &kp CARET     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH     &trans
+    &trans    &trans          &trans          &trans         &trans               &lt ACC SPACE         &trans   &trans        &trans           &trans            &trans            &trans
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │ <-  │ %{  │ ->  │     │     │     │ =>  │ |>  │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */ 
+        elixir {
+            bindings = <
+    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
+    &trans &trans &bwd_arrow &elixir_map &fwd_arrow &trans &trans &trans &fwd_darrow &elixir_pipe &trans &trans
+    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
+    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
             >;
         };
 
@@ -274,6 +295,61 @@
     };
 
     macros {
+        fwd_arrow: fwd_arrow {
+            label = "TYPE_FWD_ARROW";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp MINUS &kp GREATER_THAN>
+                ;
+        };
+
+        bwd_arrow: bwd_arrow {
+            label = "TYPE_BWD_ARROW";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LESS_THAN &kp MINUS>
+                ;
+        };
+
+        fwd_darrow: fwd_double_arrow {
+            label = "TYPE_FWD_DOUBLE_ARROW";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp EQUAL &kp GREATER_THAN>
+                ;
+        };
+
+        elixir_map: elixir_map {
+            label = "TYPE_ELIXIR_MAP";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp PERCENT &kp LEFT_BRACE>
+                ;
+        };
+
+        elixir_pipe: elixir_pipeq {
+            label = "TYPE_ELIXIR_PIPE";
+            compatible = "zmk,behavior-macro";
+            tap-ms = <0>;
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp PIPE &kp GREATER_THAN>
+                ;
+        };
+
         euro: euro {
             label = "TYPE_EURO_SYMBOL";
             compatible = "zmk,behavior-macro";
