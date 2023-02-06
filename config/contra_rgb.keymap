@@ -70,7 +70,7 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │  #  │  @  │ % ex│ - ex│  (  │  )  │  +  │ = ex│ | ex│ : ; │ & ~ │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │  $  │  !  │  *  │  _  │  {  │  }  │     │  ^  │  [  │  ]  │  \  │     │
+ * │     │  !  │  *  │  _  │  {  │  }  │     │ ^ $ │  [  │  ]  │  \  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │ acc │     │     │
  *                         └─────┴─────┴─────┴─────┘
@@ -79,7 +79,7 @@
             bindings = <
     &kp GRAVE &kp N1          &kp N2           &kp N3         &kp N4               &kp N5                &kp N6   &kp N7         &kp N8           &kp N9            &kp N0        &trans
     &kp HASH  &kp AT          &elt ELI PERCENT &elt ELI MINUS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &elt ELI EQUAL &elt ELI PIPE    &inv_colon        &and_tilde    &trans
-    &doeu     &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none    &kp CARET      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &trans
+    &trans    &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none    &caret_dollar  &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &trans
     &trans    &trans          &trans           &trans         &trans               &lt ACC SPACE         &trans   &trans         &trans           &trans            &trans        &trans
             >;
         };
@@ -307,6 +307,14 @@
             label = "AND_TILDE";
             #binding-cells = <0>;
             bindings = <&kp AMPERSAND>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        caret_dollar: caret_dollar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CARET_DOLLAR";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&doeu>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
