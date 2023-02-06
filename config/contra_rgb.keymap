@@ -12,7 +12,7 @@
 #define COL      0
 #define QWE      1
 #define SYM      2
-#define ELI      3
+#define NUM      3
 #define ACC      4
 #define NAV      5
 #define NV2      6
@@ -26,21 +26,21 @@
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │ " ' │bkspc│
+ * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │  '  │bkspc│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
+ * │tab/#│  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │ , < │ . > │ / ? │term │
+ * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │term │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │ nav │space│ sym │ctrl │
  *                         └─────┴─────┴─────┴─────┘
  */
         colemak {
             bindings = <
-    &lt FN ESC &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &inv_quot     &kp BSPC
-    &kp TAB    &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
-    &kp LSFT   &kp Z      &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL  &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC  &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &kp SQT       &kp BSPC
+    &lt NUM TAB &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
+    &kp LSFT    &kp Z      &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL   &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
 
@@ -48,9 +48,9 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │ esc │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │bkspc│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │ tab │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │ ' " │enter│
+ * │ tab │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  '  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  V  │  B  │  N  │  M  │ , < │ . > │ / ? │shift│
+ * │shift│  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │  /  │shift│
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │ nav │space│ sym │term │
  *                         └─────┴─────┴─────┴─────┘
@@ -66,41 +66,41 @@
 
 /* 
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │  `  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │     │
+ * │     │  `  │  @  │  #  │  [  │  \  │  ^  │  ]  │  *  │  ;  │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │  #  │  @  │ % ex│ - ex│  (  │  )  │  +  │ = ex│ | ex│ : ; │ & ~ │     │
+ * │     │  ~  │  %  │  -  │  (  │  +  │  =  │  )  │  |  │  :  │  &  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │  *  │  _  │  {  │  }  │     │ ^ $ │  [  │  ]  │  \  │     │
+ * │     │  !  │  $  │  _  │  {  │     │     │  }  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │ acc │     │     │
  *                         └─────┴─────┴─────┴─────┘
- */ 
+ */
         symbols {
             bindings = <
-    &kp GRAVE &kp N1          &kp N2           &kp N3         &kp N4               &kp N5                &kp N6   &kp N7         &kp N8           &kp N9            &kp N0        &trans
-    &kp HASH  &kp AT          &elt ELI PERCENT &elt ELI MINUS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS &elt ELI EQUAL &elt ELI PIPE    &inv_colon        &and_tilde    &trans
-    &trans    &kp EXCLAMATION &kp STAR         &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none    &caret_dollar  &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &trans
-    &trans    &trans          &trans           &trans         &trans               &lt ACC SPACE         &trans   &trans         &trans           &trans            &trans        &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp BACKSLASH &kp CARET &kp RIGHT_BRACKET     &kp STAR      &kp SEMICOLON     &kp SQT       &trans
+    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS      &kp EQUAL &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON         &kp AMPERSAND &trans
+    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &none         &none     &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN  &kp QUESTION  &trans
+    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE &trans    &trans                &trans        &trans            &trans        &trans
             >;
         };
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * │     │     │     │     │     │     │     │  1  │  2  │  3  │     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │ <-  │ %{  │ ->  │     │     │     │ =>  │ |>  │     │     │
+ * │     │     │     │     │     │     │  0  │  4  │  5  │  6  │  0  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * │     │     │     │     │     │     │     │  7  │  8  │  9  │     │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */ 
-        elixir {
+        numbers {
             bindings = <
-    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
-    &trans &trans &bwd_arrow &elixir_map &fwd_arrow &trans &trans &trans &fwd_darrow &elixir_pipe &trans &trans
-    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
-    &trans &trans &trans     &trans      &trans     &trans &trans &trans &trans      &trans       &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &trans &trans
+    &trans &trans &trans &trans &trans &trans &kp N0 &kp N4 &kp N5 &kp N6 &kp N0 &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
@@ -185,17 +185,6 @@
     };
 
     behaviors {        
-        elt: elixir_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ELIXIR_LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <0>;
-            quick-tap-ms = <125>;
-            retro-tap;
-            bindings = <&mo>, <&kp>;
-        };
-
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -267,54 +256,6 @@
             label = "ACCENTED_U";
             #binding-cells = <0>;
             bindings = <&lo_acc_u>, <&up_acc_u>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        inv_quot: inverted_quotes {
-            compatible = "zmk,behavior-mod-morph";
-            label = "INVERTED_QUOTES";
-            #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES>, <&kp SQT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        inv_dot: inverted_dot {
-            compatible = "zmk,behavior-mod-morph";
-            label = "INVERTED_DOT";
-            #binding-cells = <0>;
-            bindings = <&kp GREATER_THAN>, <&kp DOT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        inv_comma: inverted_comma {
-            compatible = "zmk,behavior-mod-morph";
-            label = "INVERTED_COMMA";
-            #binding-cells = <0>;
-            bindings = <&kp LESS_THAN>, <&kp COMMA>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        inv_colon: inverted_colon {
-            compatible = "zmk,behavior-mod-morph";
-            label = "INVERTED_COLON";
-            #binding-cells = <0>;
-            bindings = <&kp COLON>, <&kp SEMICOLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        and_tilde: and_tilde {
-            compatible = "zmk,behavior-mod-morph";
-            label = "AND_TILDE";
-            #binding-cells = <0>;
-            bindings = <&kp AMPERSAND>, <&kp TILDE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        caret_dollar: caret_dollar {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CARET_DOLLAR";
-            #binding-cells = <0>;
-            bindings = <&kp CARET>, <&doeu>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
