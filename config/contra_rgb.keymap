@@ -77,10 +77,10 @@
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp BACKSLASH &kp CARET &kp RIGHT_BRACKET     &kp STAR      &kp SEMICOLON     &kp SQT       &trans
-    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS      &kp EQUAL &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON         &kp AMPERSAND &trans
-    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &none         &none     &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN  &kp QUESTION  &trans
-    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE &trans    &trans                &trans        &trans            &trans        &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp BACKSLASH &kp CARET &kp RIGHT_BRACKET     &kp STAR      &kp SEMICOLON     &kp DOUBLE_QUOTES &trans
+    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS      &kp EQUAL &kp RIGHT_PARENTHESIS &kp PIPE      &kp COLON         &kp AMPERSAND     &trans
+    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &none         &none     &kp RIGHT_BRACE       &kp LESS_THAN &kp GREATER_THAN  &kp QUESTION      &trans
+    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE &trans    &trans                &trans        &trans            &trans            &trans
             >;
         };
 
