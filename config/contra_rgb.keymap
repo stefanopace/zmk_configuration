@@ -66,9 +66,9 @@
 
 /* 
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │  `  │  @  │  #  │  [  │  ]  │     │  ^  │  &  │  ;  │  "  │     │
+ * │     │  `  │  @  │  #  │  [  │  ]  │     │  ^  │  *  │  ;  │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  *  │     │
+ * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  &  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
@@ -77,30 +77,30 @@
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp AMPERSAND &kp SEMICOLON     &kp DOUBLE_QUOTES &trans
-    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON         &kp STAR          &trans
-    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN  &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans            &trans            &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
+    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
+    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
             >;
         };
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │     │     │     │     │     │  .  │  1  │  2  │  3  │  0  │     │
+ * │     │     │     │     │     │     │     │  1  │  2  │  3  │  0  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │  +  │  4  │  5  │  6  │  *  │     │
+ * │     │     │     │     │     │     │     │  4  │  5  │  6  │  .  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │  -  │  7  │  8  │  9  │  /  │     │
+ * │     │     │     │     │     │     │     │  7  │  8  │  9  │  ,  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */ 
         numbers {
             bindings = <
-    &trans &trans &trans &trans &trans &trans &kp DOT   &kp N1 &kp N2 &kp N3 &kp N0   &trans
-    &trans &trans &trans &trans &trans &trans &kp PLUS  &kp N4 &kp N5 &kp N6 &kp STAR &trans
-    &trans &trans &trans &trans &trans &trans &kp MINUS &kp N7 &kp N8 &kp N9 &kp FSLH &trans
-    &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans   &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &kp N0    &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &kp DOT   &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &kp COMMA &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans    &trans
             >;
         };
 
