@@ -70,17 +70,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  &  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
+ * │capsw│  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │ acc │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
-    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
+    &trans     &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
+    &trans     &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
+    &caps_word &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans     &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
             >;
         };
 
@@ -193,6 +193,7 @@
             quick-tap-ms = <150>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
+            retro-tap;
         };
 
         doeu: dollar_euro {
