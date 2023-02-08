@@ -21,7 +21,7 @@
 #define COMPOSE_KEY K_APP
 
 &caps_word {
-    continue-list = <UNDERSCORE BACKSPACE DELETE COMPOSE_KEY>;
+    continue-list = <UNDERSCORE BACKSPACE DELETE COMPOSE_KEY GRAVE SQT>;
 };
 
 / {
