@@ -32,9 +32,9 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │  '  │bkspc│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │tab/#│  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
+ * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │term │
+ * │nums │  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │term │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │ nav │space│ sym │ctrl │
  *                         └─────┴─────┴─────┴─────┘
@@ -42,8 +42,8 @@
         colemak {
             bindings = <
     &lt FN ESC   &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &kp SQT       &kp BSPC
-    &nmb NUM TAB &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
-    &kp LSFT     &mt LSFT Z &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp TAB      &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
+    &mo NUM      &mt LSFT Z &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
     &kp LCTRL    &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
@@ -74,17 +74,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  &  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │capsw│  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
+ * │     │  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │ acc │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans     &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans     &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
-    &caps_word &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans     &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
+    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
+    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
             >;
         };
 
