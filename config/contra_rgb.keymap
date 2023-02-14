@@ -121,10 +121,10 @@
  */
         accents {
             bindings = <
-    &trans    &trans &trans &trans &trans &trans &trans &trans &acc_u &trans &trans    &trans
-    &trans    &acc_a &trans &trans &trans &trans &trans &trans &acc_e &acc_i &acc_o    &trans
-    &kp LSHFT &trans &trans &trans &trans &trans &trans &trans &trans &trans &kp RSHFT &trans
-    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans    &trans
+    &trans &trans    &trans &trans &trans &trans &trans &trans &acc_u &trans &trans    &trans
+    &trans &acc_a    &trans &trans &trans &trans &trans &trans &acc_e &acc_i &acc_o    &trans
+    &trans &kp LSHFT &trans &trans &trans &trans &trans &trans &trans &trans &kp RSHFT &trans
+    &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans    &trans
             >;
         };
 
