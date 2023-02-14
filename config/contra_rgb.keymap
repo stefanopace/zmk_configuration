@@ -196,6 +196,7 @@
             tapping-term-ms = <175>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
+            hold-trigger-key-positions = <8 13 20 21 22>;
         };
 
         nmb: number_mods {
