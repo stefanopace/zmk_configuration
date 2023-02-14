@@ -41,10 +41,10 @@
  */
         colemak {
             bindings = <
-    &lt FN ESC   &kp Q      &kp W    &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &kp SQT       &kp BSPC
-    &kp TAB      &kp A      &kp R    &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
-    &mo NUM      &mt LSFT Z &kp X    &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL    &kp LGUI   &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC   &kp Q      &kp W      &kp F &kp P   &kp B     &kp J   &kp L     &kp U      &kp Y     &kp SQT       &kp BSPC
+    &kp TAB      &kp A      &kp R      &kp S &kp T   &kp G     &kp M   &kp N     &kp E      &kp I     &kp O         &kp ENTER
+    &mo NUM      &mt LSFT Z &acl ACC X &kp C &kp D   &kp V     &kp K   &kp H     &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL    &kp LGUI   &kp LALT   &none &mo NAV &kp SPACE &mo SYM &kp RCTRL &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
 
@@ -76,7 +76,7 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
- *                         │     │ acc │     │     │
+ *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
@@ -84,7 +84,7 @@
     &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
     &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
     &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &lt ACC SPACE         &trans    &trans        &trans        &trans           &trans            &trans
+    &trans &trans          &trans      &trans         &trans               &trans                &trans    &trans        &trans        &trans           &trans            &trans
             >;
         };
 
@@ -189,6 +189,15 @@
     };
 
     behaviors {        
+        acl: accent_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ACCENT_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
         nmb: number_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "NUMBER_MODS";
