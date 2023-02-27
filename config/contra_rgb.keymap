@@ -34,17 +34,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │nums │  Z  │  X  │  C  │  F  │  V  │  H  │  J  │  ,  │  .  │  /  │term │
+ * │     │  Z  │  X  │  C  │  F  │  V  │  H  │  J  │  ,  │  .  │  /  │term │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
- *                         │ nav │space│ sym │ctrl │
+ *                         │ nav │space│shift│ctrl │
  *                         └─────┴─────┴─────┴─────┘
  */
         colemak {
             bindings = <
-    &lt FN ESC   &kp Q      &kp W      &kp D &kp P      &kp B     &kp K &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
-    &kp TAB      &kp A      &kp R      &kp S &kp T      &kp G     &kp M &kp N      &kp E      &kp I     &kp O         &kp ENTER
-    &mo NUM      &mt LSFT Z &acl ACC X &kp C &bhm SYM F &kp V     &kp H &bhm SYM J &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL    &kp LGUI   &kp LALT   &none &mo NAV    &kp SPACE &none &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC   &kp Q      &kp W      &kp D &kp P      &kp B     &kp K    &kp L      &kp U      &kp Y     &kp SQT  &kp BSPC
+    &kp TAB      &kp A      &kp R      &kp S &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O    &kp ENTER
+    &none        &nmb NUM Z &acl ACC X &kp C &bhm SYM F &kp V     &kp H    &bhm SYM J &kp COMMA  &kp DOT   &kp FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL    &kp LGUI   &kp LALT   &none &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP   &kp RIGHT
             >;
         };
 
@@ -92,19 +92,19 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │     │     │     │     │     │     │  1  │  2  │  3  │  0  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │  4  │  5  │  6  │  .  │     │
+ * │     │     │     │     │     │     │     │  4  │  5  │  6  │     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │  7  │  8  │  9  │  ,  │     │
+ * │     │     │     │     │     │     │     │  7  │  8  │  9  │     │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */ 
         numbers {
             bindings = <
-    &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &kp N0    &trans
-    &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &kp DOT   &trans
-    &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &kp COMMA &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans    &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &kp N0 &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
