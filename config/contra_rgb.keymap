@@ -30,20 +30,20 @@
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │ esc │  Q  │  W  │  D  │  P  │  B  │  K  │  L  │  U  │  Y  │  '  │bkspc│
+ * │ esc │  Q  │  W  │  F  │  P  │  B  │  J  │  L  │  U  │  Y  │  '  │bkspc│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  F  │  V  │  H  │  J  │  ,  │  .  │  /  │term │
+ * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │term │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │ nav │space│shift│ctrl │
  *                         └─────┴─────┴─────┴─────┘
  */
         colemak {
             bindings = <
-    &lt FN ESC   &kp Q      &kp W      &kp D &kp P      &kp B     &kp K    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
+    &lt FN ESC   &kp Q      &kp W      &kp F &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
     &kp TAB      &kp A      &kp R      &kp S &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
-    &mo NUM      &mt LSFT Z &acl ACC X &kp C &bhm SYM F &kp V     &kp H    &bhm SYM J &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &mo NUM      &mt LSFT Z &acl ACC X &kp C &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
     &kp LCTRL    &kp LGUI   &kp LALT   &none &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
