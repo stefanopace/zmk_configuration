@@ -72,19 +72,19 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │ 1 ! │ 2 @ │ 3 # │ 4 $ │ 5 % │ 6 ^ │ 7 & │ 8 * │ 9 ( │ 0 ) │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │ ` ~ │ = + │ -s_ │  (  │     │     │  )  │ |s\ │ : ; │  "  │     │
+ * │     │ ~ ` │ = + │s- _ │  (  │     │     │  )  │s| \ │ : ; │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │ acc │ num │ [ { │     │     │ ] } │  <  │  >  │  ?  │     │
+ * │     │ num │ acc │  _  │ [ { │     │     │ ] } │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp N1    &kp N2    &kp N3           &fdoeu               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
-    &trans &kp GRAVE &kp EQUAL &ssh LSHFT MINUS &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
-    &trans &trans    &mo NUM   &mo ACC          &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans    &trans    &trans           &trans               &trans &trans &trans                &trans          &trans           &trans            &trans
+    &trans &kp N1     &kp N2    &kp N3           &fdoeu               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
+    &trans &inv_tilde &kp EQUAL &ssh LSHFT MINUS &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
+    &trans &mo NUM    &mo ACC   &kp UNDERSCORE   &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans     &trans    &trans           &trans               &trans &trans &trans                &trans          &trans           &trans            &trans
             >;
         };
 
@@ -130,7 +130,7 @@
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │shift│shift│shift│     │     │     │     │     │     │     │ del │
+ * │     │shift│shift│shift│     │     │  h  │  j  │  k  │  l  │     │ del │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │nav2 │ctrl │ win │ alt │ tab │     │left │down │ up  │right│     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -141,7 +141,7 @@
  */
         nav {
             bindings = <
-    &trans   &kp LSHFT &kp LSHFT &kp LSHFT &trans  &trans &trans   &trans    &trans   &trans    &trans    &kp DEL
+    &trans   &kp LSHFT &kp LSHFT &kp LSHFT &trans  &trans &kp H    &kp J     &kp K    &kp L     &trans    &kp DEL
     &mo NV2  &kp LCTRL &kp LGUI  &kp LALT  &kp TAB &trans &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &trans    &trans
     &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
     &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
@@ -234,6 +234,14 @@
             label = "INVERTED_PIPE";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        inv_tilde: inverted_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INVERTED_TILDE";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&kp GRAVE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
