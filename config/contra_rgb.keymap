@@ -41,10 +41,10 @@
  */
         colemak {
             bindings = <
-    &lt FN ESC   &kp Q      &kp W      &kp F &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
-    &kp TAB      &kp A      &kp R      &kp S &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
-    &mo NUM      &mt LSFT Z &acl ACC X &kp C &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL    &kp LGUI   &kp LALT   &none &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC   &kp Q      &kp W    &kp F &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
+    &kp TAB      &kp A      &kp R    &kp S &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
+    &kp LSFT     &mt LSFT Z &kp X    &kp C &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL    &kp LGUI   &kp LALT &none &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
 
@@ -74,16 +74,16 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │ ` ~ │ = + │ -s_ │ [ { │     │     │ ] } │ |s\ │ : ; │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │  (  │     │     │  )  │  <  │  >  │  ?  │     │
+ * │     │     │ acc │ num │  (  │     │     │  )  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp N1    &kp N2    &kp N3           &kp N4               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
+    &trans &kp N1    &kp N2    &kp N3           &fdoeu               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
     &trans &kp GRAVE &kp EQUAL &ssh LSHFT MINUS &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
-    &trans &trans    &trans    &trans           &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans    &mo NUM   &mo ACC          &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
     &trans &trans    &trans    &trans           &trans               &trans &trans &trans                &trans          &trans           &trans            &trans
             >;
         };
@@ -114,7 +114,7 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  À  │     │     │     │     │     │     │ È É │  Ì  │  Ò  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * │     │shift│     │     │     │     │     │     │     │     │shift│     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
@@ -199,17 +199,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        acl: accent_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ACCENT_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            flavor = "hold-preferred";
-            bindings = <&mo>, <&kp>;
-            hold-trigger-key-positions = <8 13 20 21 22>;
-            retro-tap;
-        };
-
         ssh: symbol_shifts {
             compatible = "zmk,behavior-hold-tap";
             label = "SYMBOL_SHIFTS";
@@ -232,17 +221,6 @@
             retro-tap;
         };
 
-        nmb: number_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NUMBER_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
-            flavor = "hold-preferred";
-            bindings = <&mo>, <&kp>;
-            retro-tap;
-        };
-
         inv_colon: inverted_colon {
             compatible = "zmk,behavior-mod-morph";
             label = "INVERTED_COLON";
@@ -256,6 +234,14 @@
             label = "INVERTED_PIPE";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        fdoeu: four_doeu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FOUR_DOEU";
+            #binding-cells = <0>;
+            bindings = <&kp N4>, <&doeu>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -325,61 +311,6 @@
     };
 
     macros {
-        fwd_arrow: fwd_arrow {
-            label = "TYPE_FWD_ARROW";
-            compatible = "zmk,behavior-macro";
-            tap-ms = <0>;
-            wait-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp MINUS &kp GREATER_THAN>
-                ;
-        };
-
-        bwd_arrow: bwd_arrow {
-            label = "TYPE_BWD_ARROW";
-            compatible = "zmk,behavior-macro";
-            tap-ms = <0>;
-            wait-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LESS_THAN &kp MINUS>
-                ;
-        };
-
-        fwd_darrow: fwd_double_arrow {
-            label = "TYPE_FWD_DOUBLE_ARROW";
-            compatible = "zmk,behavior-macro";
-            tap-ms = <0>;
-            wait-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp EQUAL &kp GREATER_THAN>
-                ;
-        };
-
-        elixir_map: elixir_map {
-            label = "TYPE_ELIXIR_MAP";
-            compatible = "zmk,behavior-macro";
-            tap-ms = <0>;
-            wait-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp PERCENT &kp LEFT_BRACE>
-                ;
-        };
-
-        elixir_pipe: elixir_pipeq {
-            label = "TYPE_ELIXIR_PIPE";
-            compatible = "zmk,behavior-macro";
-            tap-ms = <0>;
-            wait-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp PIPE &kp GREATER_THAN>
-                ;
-        };
-
         euro: euro {
             label = "TYPE_EURO_SYMBOL";
             compatible = "zmk,behavior-macro";
