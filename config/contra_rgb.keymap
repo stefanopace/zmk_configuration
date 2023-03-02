@@ -68,23 +68,23 @@
             >;
         };
 
-/* 
+/*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │  `  │  @  │  #  │  [  │  ]  │     │  ^  │  *  │  ;  │  "  │     │
+ * │     │ 1 ! │ 2 @ │ 3 # │ 4 $ │ 5 % │ 6 ^ │ 7 & │ 8 * │ 9 ( │ 0 ) │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  &  │     │
+ * │     │ ` ~ │ = + │ -s_ │ [ { │     │     │ ] } │ |s\ │ : ; │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │  $  │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
+ * │     │     │     │     │  (  │     │     │  )  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &none &kp CARET         &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL     &kp PIPE      &kp COLON        &kp AMPERSAND     &trans
-    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none     &kp BACKSLASH &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &trans                &trans    &trans        &trans        &trans           &trans            &trans
+    &trans &kp N1    &kp N2    &kp N3           &kp N4               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
+    &trans &kp GRAVE &kp EQUAL &ssh LSHFT MINUS &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
+    &trans &trans    &trans    &trans           &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans    &trans    &trans           &trans               &trans &trans &trans                &trans          &trans           &trans            &trans
             >;
         };
 
@@ -110,9 +110,9 @@
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │     │     │     │     │     │     │     │     │  Ù  │     │     │
+ * │     │     │     │     │     │     │     │     │  Ù  │     │     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  À  │     │     │     │     │     │     │     │ È É │  Ì  │  Ò  │
+ * │     │  À  │     │     │     │     │     │     │ È É │  Ì  │  Ò  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │     │     │     │     │     │     │     │     │     │     │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
@@ -210,6 +210,28 @@
             retro-tap;
         };
 
+        ssh: symbol_shifts {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYMBOL_SHIFTS";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 16 19 20 21>;
+            retro-tap;
+        };
+
+        ssp: symbol_shifts_pipe {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYMBOL_SHIFTS_PIPE";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&inv_pipe>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 16 19 20 21>;
+            retro-tap;
+        };
+
         nmb: number_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "NUMBER_MODS";
@@ -219,6 +241,22 @@
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
             retro-tap;
+        };
+
+        inv_colon: inverted_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INVERTED_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMICOLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        inv_pipe: inverted_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INVERTED_PIPE";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         doeu: dollar_euro {
