@@ -72,9 +72,9 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │ 1 ! │ 2 @ │ 3 # │ 4 $ │ 5 % │ 6 ^ │ 7 & │ 8 * │ 9 ( │ 0 ) │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │ ` ~ │ = + │ -s_ │ [ { │     │     │ ] } │ |s\ │ : ; │  "  │     │
+ * │     │ ` ~ │ = + │ -s_ │  (  │     │     │  )  │ |s\ │ : ; │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │ acc │ num │  (  │     │     │  )  │  <  │  >  │  ?  │     │
+ * │     │     │ acc │ num │ [ { │     │     │ ] } │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
@@ -82,8 +82,8 @@
         symbols {
             bindings = <
     &trans &kp N1    &kp N2    &kp N3           &fdoeu               &kp N5 &kp N6 &kp N7                &kp N8          &kp N9           &kp N0            &trans
-    &trans &kp GRAVE &kp EQUAL &ssh LSHFT MINUS &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
-    &trans &trans    &mo NUM   &mo ACC          &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &kp GRAVE &kp EQUAL &ssh LSHFT MINUS &kp LEFT_PARENTHESIS &none  &none  &kp RIGHT_PARENTHESIS &ssp LSHFT PIPE &inv_colon       &kp DOUBLE_QUOTES &trans
+    &trans &trans    &mo NUM   &mo ACC          &kp LEFT_BRACKET     &none  &none  &kp RIGHT_BRACKET     &kp LESS_THAN   &kp GREATER_THAN &kp QUESTION      &trans
     &trans &trans    &trans    &trans           &trans               &trans &trans &trans                &trans          &trans           &trans            &trans
             >;
         };
@@ -206,7 +206,7 @@
             tapping-term-ms = <175>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 16 19 20 21>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 20 21 28 31>;
             retro-tap;
         };
 
@@ -217,7 +217,7 @@
             tapping-term-ms = <175>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&inv_pipe>;
-            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 16 19 20 21>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 8 9 10 13 14 15 20 21 28 31>;
             retro-tap;
         };
 
