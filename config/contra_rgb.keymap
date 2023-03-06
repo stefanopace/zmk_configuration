@@ -70,21 +70,21 @@
 
 /*
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │  `  │  @  │  #  │  $  │  ~  │  ^  │  &  │  *  │  ;  │  "  │     │
+ * │     │  `  │  @  │  #  │  [  │  $  │  ]  │  &  │  *  │  ;  │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │ num │  %  │  -  │  (  │  +  │  )  │  =  │  |  │  :  │  \  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │ acc │  _  │  {  │  [  │  ]  │  }  │  <  │  >  │  ?  │     │
+ * │     │  !  │ acc │  _  │  {  │  ~  │  }  │  ^  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &doeu                &kp TILDE        &kp CARET             &kp AMPERSAND   &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans &mo NUM         &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS         &kp RIGHT_PARENTHESIS &kp EQUAL       &kp PIPE      &kp COLON        &kp BACKSLASH     &trans
-    &trans &kp EXCLAMATION &mo ACC     &kp UNDERSCORE &kp LEFT_BRACE       &kp LEFT_BRACKET &kp RIGHT_BRACKET     &kp RIGHT_BRACE &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &trans           &trans                &trans          &trans        &trans           &trans            &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &doeu     &kp RIGHT_BRACKET     &kp AMPERSAND   &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
+    &trans &mo NUM         &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp PLUS  &kp RIGHT_PARENTHESIS &kp EQUAL       &kp PIPE      &kp COLON        &kp BACKSLASH     &trans
+    &trans &kp EXCLAMATION &mo ACC     &kp UNDERSCORE &kp LEFT_BRACE       &kp TILDE &kp RIGHT_BRACE       &kp CARET       &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans          &trans      &trans         &trans               &trans    &trans                &trans          &trans        &trans           &trans            &trans
             >;
         };
 
