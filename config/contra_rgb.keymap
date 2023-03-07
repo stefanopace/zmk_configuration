@@ -41,10 +41,10 @@
  */
         colemak {
             bindings = <
-    &lt FN ESC   &kp Q      &kp W    &kp F &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
-    &kp TAB      &kp A      &kp R    &kp S &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
-    &kp LSFT     &mt LSFT Z &kp X    &kp C &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL    &kp LGUI   &kp LALT &none &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &lt FN ESC   &kp Q      &kp W &kp F    &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
+    &kp TAB      &kp A      &kp R &kp S    &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
+    &kp LSFT     &mt LSFT Z &kp X &kp C    &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
+    &kp LCTRL    &kp LGUI   &none &kp LALT &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
 
@@ -61,10 +61,10 @@
  */
         qwerty {
             bindings = <
-    &lt FN ESC &kp Q    &kp W    &kp E &kp R   &kp T     &kp Y   &kp U             &kp I     &kp O    &kp P    &kp BSPC
-    &kp TAB    &kp A    &kp S    &kp D &kp F   &kp G     &kp H   &kp J             &kp K     &kp L    &kp SQT  &kp ENTER
-    &kp LSHFT  &kp Z    &kp X    &kp C &kp V   &kp B     &kp N   &kp M             &kp COMMA &kp DOT  &kp UP   &kp RSHFT
-    &kp LCTRL  &kp LGUI &kp LALT &none &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp FSLH  &kp LEFT &kp DOWN &kp RIGHT
+    &lt FN ESC &kp Q    &kp W &kp E    &kp R   &kp T     &kp Y   &kp U             &kp I     &kp O    &kp P    &kp BSPC
+    &kp TAB    &kp A    &kp S &kp D    &kp F   &kp G     &kp H   &kp J             &kp K     &kp L    &kp SQT  &kp ENTER
+    &kp LSHFT  &kp Z    &kp X &kp C    &kp V   &kp B     &kp N   &kp M             &kp COMMA &kp DOT  &kp UP   &kp RSHFT
+    &kp LCTRL  &kp LGUI &none &kp LALT &mo NAV &kp SPACE &mo SYM &kp LC(LA(EQUAL)) &kp FSLH  &kp LEFT &kp DOWN &kp RIGHT
             >;
         };
 
@@ -183,7 +183,7 @@
     &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none &kp F1 &kp F2 &kp F3 &kp F10 &tog QWE
     &kp CAPS   &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none &kp F4 &kp F5 &kp F6 &kp F11 &none
     &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none &kp F7 &kp F8 &kp F9 &kp F12 &none
-    &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none &none  &none  &none  &none   &none
+    &bt BT_CLR &bt BT_SEL 0    &none           &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none &none  &none  &none  &none   &none
             >;
         };
     };
