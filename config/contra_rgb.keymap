@@ -134,17 +134,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │nav2 │ctrl │ win │ alt │ tab │     │left │down │ up  │right│     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * │     │     │     │     │     │     │     │term │     │     │     │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         nav {
             bindings = <
-    &trans   &kp LSHFT &kp LSHFT &kp LSHFT &trans  &trans &kp H    &kp J     &kp K    &kp L     &trans    &kp DEL
-    &mo NV2  &kp LCTRL &kp LGUI  &kp LALT  &kp TAB &trans &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &trans    &trans
-    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
-    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans    &trans   &trans    &trans    &trans
+    &trans   &kp LSHFT &kp LSHFT &kp LSHFT &trans  &trans &kp H    &kp J             &kp K    &kp L     &trans    &kp DEL
+    &mo NV2  &kp LCTRL &kp LGUI  &kp LALT  &kp TAB &trans &kp LEFT &kp DOWN          &kp UP   &kp RIGHT &trans    &trans
+    &trans   &trans    &trans    &trans    &trans  &trans &trans   &kp LC(LA(EQUAL)) &trans   &trans    &trans    &trans
+    &trans   &trans    &trans    &trans    &trans  &trans &trans   &trans            &trans   &trans    &trans    &trans
             >;
         };
 /*
