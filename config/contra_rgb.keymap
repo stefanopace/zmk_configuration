@@ -13,10 +13,11 @@
 #define QWE      1
 #define SYM      2
 #define NUM      3
-#define ACC      4
-#define NAV      5
-#define NV2      6
-#define FN       7
+#define RNUM     4
+#define ACC      5
+#define NAV      6
+#define NV2      7
+#define FN       8
 
 #define COMPOSE_KEY K_APP
 
@@ -34,17 +35,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │ tab │  A  │  R  │  S  │  T  │  G  │  M  │  N  │  E  │  I  │  O  │enter│
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │shift│  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │term │
+ * │ acc │  Z  │  X  │  C  │  D  │  V  │  K  │  H  │  ,  │  .  │  /  │wcaps│
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
- *                         │ nav │space│shift│ctrl │
+ *                         │ nav │space│ num │ctrl │
  *                         └─────┴─────┴─────┴─────┘
  */
         colemak {
             bindings = <
     &lt FN ESC   &kp Q      &kp W &kp F    &kp P      &kp B     &kp J    &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
     &kp TAB      &kp A      &kp R &kp S    &kp T      &kp G     &kp M    &kp N      &kp E      &kp I     &kp O         &kp ENTER
-    &kp LSFT     &mt LSFT Z &kp X &kp C    &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &kp LC(LA(EQUAL))
-    &kp LCTRL    &kp LGUI   &none &kp LALT &mo NAV    &kp SPACE &kp LSFT &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
+    &mo ACC      &mt LSFT Z &kp X &kp C    &bhm SYM D &kp V     &kp K    &bhm SYM H &kp COMMA  &kp DOT   &mt RSFT FSLH &caps_word
+    &kp LCTRL    &kp LGUI   &none &kp LALT &mo NAV    &kp SPACE &mo RNUM &kp RCTRL  &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT
             >;
         };
 
@@ -72,19 +73,19 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │  `  │  @  │  #  │  [  │  ]  │  ^  │  &  │  *  │  ;  │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │ num │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  \  │     │
+ * │     │ num │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  ~  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  !  │ $ € │  _  │  {  │  }  │  ~  │ acc │  <  │  >  │  ?  │     │
+ * │     │  !  │ $ € │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         symbols {
             bindings = <
-    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp CARET &kp AMPERSAND   &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans &mo NUM         &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS  &kp EQUAL       &kp PIPE      &kp COLON        &kp BACKSLASH     &trans
-    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp TILDE &mo ACC         &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
-    &trans &trans          &trans      &trans         &trans               &trans                &trans    &trans          &trans        &trans           &trans            &trans
+    &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp CARET  &kp AMPERSAND   &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
+    &trans &mo NUM         &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS   &kp EQUAL       &kp PIPE      &kp COLON        &kp TILDE         &trans
+    &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none      &kp BACKSLASH   &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
+    &trans &trans          &trans      &trans         &trans               &trans                &trans     &trans          &trans        &trans           &trans            &trans
             >;
         };
 
@@ -104,6 +105,26 @@
     &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &kp N0 &trans
     &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &trans &trans
     &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+/*
+ * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │     │
+ * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+ * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+ *                         │     │     │     │     │
+ *                         └─────┴─────┴─────┴─────┘
+ */ 
+        row_numbers {
+            bindings = <
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
