@@ -13,11 +13,10 @@
 #define QWE      1
 #define SYM      2
 #define NUM      3
-#define RNUM     4
-#define ACC      5
-#define NAV      6
-#define NV2      7
-#define FN       8
+#define ACC      4
+#define NAV      5
+#define NV2      6
+#define FN       7
 
 #define COMPOSE_KEY K_APP
 
@@ -73,7 +72,7 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │  `  │  @  │  #  │  [  │  ]  │  ^  │  &  │  *  │  ;  │  "  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │ num │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │  ~  │     │
+ * │     │  ~  │  %  │  -  │  (  │  )  │  +  │  =  │  |  │  :  │     │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  !  │ $ € │  _  │  {  │  }  │     │  \  │  <  │  >  │  ?  │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
@@ -83,29 +82,9 @@
         symbols {
             bindings = <
     &trans &kp GRAVE       &kp AT      &kp HASH       &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp CARET  &kp AMPERSAND   &kp STAR      &kp SEMICOLON    &kp DOUBLE_QUOTES &trans
-    &trans &mo NUM         &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS   &kp EQUAL       &kp PIPE      &kp COLON        &kp TILDE         &trans
+    &trans &kp TILDE       &kp PERCENT &kp MINUS      &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp PLUS   &kp EQUAL       &kp PIPE      &kp COLON        &none             &trans
     &trans &kp EXCLAMATION &doeu       &kp UNDERSCORE &kp LEFT_BRACE       &kp RIGHT_BRACE       &none      &kp BACKSLASH   &kp LESS_THAN &kp GREATER_THAN &kp QUESTION      &trans
     &trans &trans          &trans      &trans         &trans               &trans                &trans     &trans          &trans        &trans           &trans            &trans
-            >;
-        };
-
-/*
- * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
- * │     │     │     │     │     │     │     │  1  │  2  │  3  │  0  │     │
- * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │  4  │  5  │  6  │     │     │
- * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │  7  │  8  │  9  │     │     │
- * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
- *                         │     │     │     │     │
- *                         └─────┴─────┴─────┴─────┘
- */ 
-        numbers {
-            bindings = <
-    &trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3 &kp N0 &trans
-    &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
@@ -120,7 +99,7 @@
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */ 
-        row_numbers {
+        numbers {
             bindings = <
     &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
     &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
