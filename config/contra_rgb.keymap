@@ -95,17 +95,17 @@
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │     │     │     │     │     │     │     │     │     │     │     │
+ * │caps │     │     │     │     │     │     │     │     │     │     │capsw│
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │     │     │     │     │
  *                         └─────┴─────┴─────┴─────┘
  */
         numbers {
             bindings = <
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-    &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+    &kp CAPS  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &caps_word
+    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
@@ -172,7 +172,7 @@
  * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
  * │     │     │     │     │     │     │     │ F1  │ F2  │ F3  │ F10 │ qwe │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
- * │caps │     │     │     │     │     │     │ F4  │ F5  │ F6  │ F11 │     │
+ * │     │     │     │     │     │     │     │ F4  │ F5  │ F6  │ F11 │     │
  * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
  * │     │     │     │     │     │     │     │ F7  │ F8  │ F9  │ F12 │     │
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
@@ -182,7 +182,7 @@
         fn {
             bindings = <
     &trans     &rgb_ug RGB_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &none           &none           &none        &kp F1 &kp F2 &kp F3 &kp F10 &tog QWE
-    &kp CAPS   &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none        &kp F4 &kp F5 &kp F6 &kp F11 &none
+    &trans     &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none        &kp F4 &kp F5 &kp F6 &kp F11 &none
     &none      &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none        &kp F7 &kp F8 &kp F9 &kp F12 &out OUT_BLE
     &bt BT_CLR &bt BT_SEL 0    &none           &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 1 &none  &none  &none  &none   &out OUT_USB
             >;
