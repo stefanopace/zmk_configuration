@@ -3,6 +3,8 @@
 container_name=$(docker ps | grep -o "^[a-z0-9]*")
 echo $container_name
 
+# docker volume create --driver local -o o=bind -o type=none -o device="/home/stefano/fun/keyboards/zmk_configuration/" zmk-config
+
 docker exec -it --workdir /workspaces/zmk/app $container_name west build --pristine -b nice_nano_v2 -- -DSHIELD=contra_rgb -DZMK_CONFIG="/workspaces/zmk-config/config"
 
 if [[ $? -ne 0 ]]; then echo "fail"; exit 1 ;fi
@@ -16,4 +18,5 @@ done
 
 echo ""
 
-cp "/home/stefano/work-in-progress/zmk/app/build/zephyr/zmk.uf2" "/media/stefano/NICENANO"
+cp "/home/stefano/fun/keyboards/zmk_firmware/zmk/app/build/zephyr/zmk.uf2" "/media/stefano/NICENANO"
+

@@ -39,7 +39,7 @@
  * └─────┴─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┴─────┘
  *                         │ nav │space│nu/ac│ctrl │
  *                         └─────┴─────┴─────┴─────┘
- *
+ */
         colemak {
             bindings = <
     &lt FN ESC   &kp Q      &kp W &kp F    &kp P      &kp B     &kp J        &kp L      &kp U      &kp Y     &kp SQT       &kp BSPC
