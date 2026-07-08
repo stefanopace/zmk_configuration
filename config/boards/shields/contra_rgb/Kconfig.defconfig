@@ -1,7 +1,7 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_CONTRA
+if SHIELD_CONTRA_RGB
 
 config ZMK_KEYBOARD_NAME
     default "Contra Keyboard"
